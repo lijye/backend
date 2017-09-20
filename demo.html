@@ -1,0 +1,426 @@
+<!-- http://www.jq22.com/demo/jqueryNavbl20160816/# -->
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>demo</title>
+  <link rel="stylesheet" href="./libs/left_menu/sidebar-menu.css">
+  <link rel="stylesheet" href="./libs/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./libs/css/font-awesome.4.6.0.css">
+  <link rel="stylesheet" href="./libs/css/common.css">
+  <link rel="stylesheet" href="./libs/css/boot_revise.css">
+  <style type="text/css">
+  	header{
+  		height:80px;
+  		line-height: 80px;
+  		background:black;
+  	}
+	  .main-sidebar {
+	    position: relative;
+	    height: 100%;
+	    min-height: 100%;
+	    width: 200px;
+	    z-index: 810;
+	    background-color: #222d32;
+	  }
+		div#content{
+	  	position: absolute;
+	  	left:200px;
+	  	top:80px;
+	  	right:0;
+	  	bottom:0;
+
+	  	margin:10px 20px;
+	  }
+	  #content h4.content-title{
+	  	margin-top:0;
+	  	border-left: 2px solid #88B7E0;
+	  	padding-left:10px;
+	  	background:#F5F6FA;
+	  	height:40px;
+	  	line-height: 40px;
+	  }
+	  #content h4.content-title a{
+	  	height:40px;
+	  	line-height: 40px;
+	  	float: right;
+	  	margin-right:20px;
+	  	color:#bbb;
+	  	font-size:16px;
+	  }
+	  .container{
+	  	width:100%;
+	  }
+	  div.input-group[class*="col-"]{
+	  	float:left;
+	  }
+
+	  table.table-vertical tbody{
+	  	outline: solid #ccc 2px;
+	  }
+	  table.table-vertical tbody tr td{
+	  	border-right:solid #ccc 1px;
+	  }
+	  table.table-vertical tbody tr th{
+	  	text-align:right;
+	  }
+  </style>
+</head>
+
+<body style="">
+	<header></header>
+  <aside class="main-sidebar">
+    <section class="sidebar">
+      <ul class="sidebar-menu">
+        <li class="header">主导航</li>
+        <li class="treeview">
+          <a href="javascript:;">
+					  <i class="fa fa-dashboard"></i> <span>仪表盘</span> <i class="fa fa-angle-right pull-right"></i>
+					</a>
+          <ul class="treeview-menu">
+            <li><a href="javascript:;"><i class="fa fa-circle-o"></i> 仪表盘 v1</a></li>
+            <li><a href="javascript:;"><i class="fa fa-circle-o"></i> 仪表盘 v2</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="javascript:;">
+					  <i class="fa fa-files-o"></i>
+					  <span>布局选项</span>
+					  <span class="label label-primary pull-right">4</span>
+					</a>
+          <ul class="treeview-menu" style="display: none;">
+            <li><a href="javascript:;"><i class="fa fa-circle-o"></i> 顶部导航</a></li>
+            <li><a href="javascript:;"><i class="fa fa-circle-o"></i> 盒子布局</a></li>
+            <li><a href="javascript:;"><i class="fa fa-circle-o"></i> 固定布局</a></li>
+            <li class=""><a href="javascript:;"><i class="fa fa-circle-o"></i> 折叠侧边栏</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="javascript:;">
+					  <i class="fa fa-th"></i> <span>窗口小部件</span>
+					  <small class="label pull-right label-info">新的</small>
+					</a>
+        </li>
+        <li class="treeview">
+          <a href="javascript:;">
+					  <i class="fa fa-pie-chart"></i>
+					  <span>图表</span>
+					  <i class="fa fa-angle-right pull-right"></i>
+					</a>
+          <ul class="treeview-menu">
+            <li><a href="javascript:;"><i class="fa fa-circle-o"></i> ChartJS</a></li>
+            <li><a href="javascript:;"><i class="fa fa-circle-o"></i> Morris</a></li>
+            <li><a href="javascript:;"><i class="fa fa-circle-o"></i> Flot</a></li>
+            <li><a href="javascript:;"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="javascript:;">
+					  <i class="fa fa-laptop"></i>
+					  <span>UI 元素</span>
+					  <i class="fa fa-angle-right pull-right"></i>
+					</a>
+          <ul class="treeview-menu">
+            <li><a href="javascript:;"><i class="fa fa-circle-o"></i> 一般</a></li>
+            <li><a href="javascript:;"><i class="fa fa-circle-o"></i> Icons图标</a></li>
+            <li><a href="javascript:;"><i class="fa fa-circle-o"></i> 按钮</a></li>
+            <li><a href="javascript:;"><i class="fa fa-circle-o"></i> 滑块</a></li>
+            <li><a href="javascript:;"><i class="fa fa-circle-o"></i> 时间表</a></li>
+            <li><a href="javascript:;"><i class="fa fa-circle-o"></i> 模态框</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="javascript:;">
+					  <i class="fa fa-edit"></i> <span>表单</span>
+					  <i class="fa fa-angle-right pull-right"></i>
+					</a>
+          <ul class="treeview-menu">
+            <li><a href="javascript:;"><i class="fa fa-circle-o"></i> 一般表单</a></li>
+            <li><a href="javascript:;"><i class="fa fa-circle-o"></i> 高级表单</a></li>
+            <li><a href="javascript:;"><i class="fa fa-circle-o"></i> 可编辑表单</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="javascript:;">
+					  <i class="fa fa-table"></i> <span>表格</span>
+					  <i class="fa fa-angle-right pull-right"></i>
+					</a>
+          <ul class="treeview-menu">
+            <li><a href="javascript:;"><i class="fa fa-circle-o"></i> 简单表格</a></li>
+            <li><a href="javascript:;"><i class="fa fa-circle-o"></i> 时间表格</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="javascript:;">
+					  <i class="fa fa-calendar"></i> <span>日历</span>
+					  <small class="label pull-right label-danger">3</small>
+					</a>
+        </li>
+        <li>
+          <a href="javascript:;">
+					  <i class="fa fa-envelope"></i> <span>邮箱</span>
+					  <small class="label pull-right label-warning">12</small>
+					</a>
+        </li>
+        <li class="treeview">
+          <a href="javascript:;">
+					  <i class="fa fa-folder"></i> <span>实例</span>
+					  <i class="fa fa-angle-right pull-right"></i>
+					</a>
+          <ul class="treeview-menu">
+            <li><a href="javascript:;"><i class="fa fa-circle-o"></i> 清单</a></li>
+            <li><a href="javascript:;"><i class="fa fa-circle-o"></i> 简况</a></li>
+            <li><a href="javascript:;"><i class="fa fa-circle-o"></i> 登录</a></li>
+            <li><a href="javascript:;"><i class="fa fa-circle-o"></i> 注册</a></li>
+            <li><a href="javascript:;"><i class="fa fa-circle-o"></i> 锁频</a></li>
+            <li><a href="javascript:;"><i class="fa fa-circle-o"></i> 404 错误</a></li>
+            <li><a href="javascript:;"><i class="fa fa-circle-o"></i> 500 错误</a></li>
+            <li><a href="javascript:;"><i class="fa fa-circle-o"></i> 空白页面</a></li>
+            <li><a href="javascript:;"><i class="fa fa-circle-o"></i> 自适应页面</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="javascript:;">
+					  <i class="fa fa-share"></i> <span>多级</span>
+					  <i class="fa fa-angle-right pull-right"></i>
+					</a>
+          <ul class="treeview-menu">
+            <li><a href="javascript:;"><i class="fa fa-circle-o"></i> 一级</a></li>
+            <li>
+              <a href="javascript:;"><i class="fa fa-circle-o"></i> 一级 <i class="fa fa-angle-right pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="javascript:;"><i class="fa fa-circle-o"></i> 二级</a></li>
+                <li>
+                  <a href="javascript:;"><i class="fa fa-circle-o"></i> 二级 <i class="fa fa-angle-right pull-right"></i></a>
+                  <ul class="treeview-menu">
+                    <li><a href="javascript:;"><i class="fa fa-circle-o"></i> 三级</a></li>
+                    <li><a href="javascript:;"><i class="fa fa-circle-o"></i> 三级</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="javascript:;"><i class="fa fa-circle-o"></i> 一级</a></li>
+          </ul>
+        </li>
+        <li><a href="javascript:;"><i class="fa fa-book"></i> <span>文档</span></a></li>
+        <li class="header">标签</li>
+        <li><a href="javascript:;"><i class="fa fa-circle-o text-red"></i> <span>重要</span></a></li>
+        <li><a href="javascript:;"><i class="fa fa-circle-o text-yellow"></i> <span>警告</span></a></li>
+        <li><a href="javascript:;"><i class="fa fa-circle-o text-aqua"></i> <span>通知</span></a></li>
+      </ul>
+    </section>
+  </aside>
+  <div id="content">
+  	<h4 class="content-title">
+  		用户列表
+  		<a href="javascript:;" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> 新增</a>
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="myModalLabel">新增</h4>
+		      </div>
+		      <div class="modal-body">
+		        ...
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        <button type="button" class="btn btn-primary">Save changes</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<!-- end of modal -->
+  	</h4>
+  	<div class="container">
+  		<!-- <div class="row"> -->
+  			<form class="form-horizontal">
+  			  <div class="form-group">
+				    <label for="name" class="col-sm-1 control-label">昵称</label>
+				    <div class="col-sm-2">
+				      <input type="password" class="form-control" id="name" placeholder="昵称">
+				    </div>
+				    <label for="phone" class="col-sm-1 control-label">电话</label>
+				    <div class="col-sm-2">
+				      <input type="password" class="form-control" id="phone" placeholder="电话">
+				    </div>
+				    <label class="col-sm-1 control-label">角色名称</label>
+				    <div class="col-sm-2">
+				      <select class="form-control">
+						  <option>1</option>
+						  <option>2</option>
+						  <option>3</option>
+						  <option>4</option>
+						  <option>5</option>
+						</select>
+				    </div>
+				    <!-- <input type="button" class="col-sm-1" id="select" value="查询"> -->
+				    <button type="button" class="btn btn-primary">查询</button>
+				  </div>
+  			</form>
+  			<form class="form-horizontal">
+				<div class="form-group">
+					<label class="col-sm-1 control-label">所属城市</label>
+					<div class="col-sm-2">
+				      <select class="form-control">
+						  <option>1</option>
+						  <option>2</option>
+						  <option>3</option>
+						  <option>4</option>
+						  <option>5</option>
+						</select>
+				    </div>
+					<label class="col-sm-1 control-label">取车网点</label>
+					<div class="col-sm-2">
+				      <select class="form-control">
+						  <option>1</option>
+						  <option>2</option>
+						  <option>3</option>
+						  <option>4</option>
+						  <option>5</option>
+						</select>
+				    </div>
+					<label class="col-sm-1 control-label">换车网点</label>
+					<div class="col-sm-2">
+				      <select class="form-control">
+						  <option>1</option>
+						  <option>2</option>
+						  <option>3</option>
+						  <option>4</option>
+						  <option>5</option>
+						</select>
+				    </div>
+					<label class="col-sm-1 control-label min-4em">订单状态</label>
+					<div class="col-sm-2">
+				      <select class="form-control">
+						  <option>1</option>
+						  <option>2</option>
+						  <option>3</option>
+						  <option>4</option>
+						  <option>5</option>
+						</select>
+				    </div>
+				</div>
+			</form>
+  		<!-- </div> -->
+  			<table class="table table-bordered">
+				  <thead>
+				  	<tr>
+				  		<th>登录名</th>
+				  		<th>昵称</th>
+				  		<th>手机号码</th>
+				  		<th>角色名称</th>
+				  		<th>城市</th>
+				  		<th>状态</th>
+				  		<th>操作</th>
+				  	</tr>
+				  </thead>
+				  <tbody>
+				  	<tr>
+				  		<td>1231</td>
+				  		<td>1231</td>
+				  		<td>1231</td>
+				  		<td>1231</td>
+				  		<td>1231</td>
+				  		<td>1231</td>
+				  		<td>1231</td>
+				  	</tr>
+				  </tbody>
+				</table>
+  	</div>
+
+
+
+
+  	<h4 class="content-title">订单列表查看</h4>
+  	<div class="container">
+  		<div class="btn-group" role="group" aria-label="...">
+			  <button type="button" class="btn btn-default">追踪</button>
+			  <button type="button" class="btn btn-default">备注</button>
+			  <button type="button" class="btn btn-default">取消订单</button>
+			  <button type="button" class="btn btn-default">违章管理</button>
+			  <button type="button" class="btn btn-default"><i class="fa fa-plus"></i> 新增违章</button>
+			  <button type="button" class="btn btn-default">GPS轨迹</button>
+			  <button type="button" class="btn btn-default">GPS列表</button>
+			  <button type="button" class="btn btn-default">状态列表</button>
+			  <button type="button" class="btn btn-default">命令列表</button>
+			  <button type="button" class="btn btn-default">提车里程初始化</button>
+			  <button type="button" class="btn btn-default">人脸识别审核通过</button>
+			  <button type="button" class="btn btn-default">订单退款</button>
+			  <button type="button" class="btn btn-default">人脸识别错误列表</button>
+			  <button type="button" class="btn btn-default">新建工单</button>
+		</div>
+		
+
+		<table class="table table-vertical table-hover" style="margin-top:20px;">
+		  	<tbody>
+			  	<tr>
+			  		<th>订单编号:</th>
+			  		<td>1709081512515073108</td>
+			  		<th>用户</th>
+			  		<td><a href="javascript:;">黎俊涛  18608333230</a></td>
+			  	</tr>
+			  	<tr>
+			  		<th>租用车辆:</th>
+			  		<td>琼B0153X</td>
+			  		<th>城市</th>
+			  		<td><a href="javascript:;">三亚</a></td>
+			  	</tr>
+			  	<tr>
+			  		<th>订单编号:</th>
+			  		<td>1709081512515073108</td>
+			  		<th>用户</th>
+			  		<td><a href="javascript:;">黎俊涛  18608333230</a></td>
+			  	</tr>
+			  	<tr>
+			  		<th>租用车辆:</th>
+			  		<td>琼B0153X</td>
+			  		<th>城市</th>
+			  		<td><a href="javascript:;">三亚</a></td>
+			  	</tr>
+			  	<tr>
+			  		<th>订单编号:</th>
+			  		<td>1709081512515073108</td>
+			  		<th>用户</th>
+			  		<td><a href="javascript:;">黎俊涛  18608333230</a></td>
+			  	</tr>
+			  	<tr>
+			  		<th>租用车辆:</th>
+			  		<td>琼B0153X</td>
+			  		<th>城市</th>
+			  		<td><a href="javascript:;">三亚</a></td>
+			  	</tr>
+			  	<tr>
+			  		<th>订单编号:</th>
+			  		<td>1709081512515073108</td>
+			  		<th>用户</th>
+			  		<td><a href="javascript:;">黎俊涛  18608333230</a></td>
+			  	</tr>
+			  	<tr>
+			  		<th>租用车辆:</th>
+			  		<td>琼B0153X</td>
+			  		<th>城市</th>
+			  		<td><a href="javascript:;">三亚</a></td>
+			  	</tr>
+		  	</tbody>
+		</table>
+  	</div>	
+</div>
+
+
+
+
+<script src="./libs/js/jquery.min.js"></script>
+<script src="./libs/js/bootstrap.min.js"></script>
+<script src="./libs/left_menu/sidebar-menu.js"></script>
+  <script>
+  $.sidebarMenu($('.sidebar-menu'))
+  </script>
+</body>
+
+</html>

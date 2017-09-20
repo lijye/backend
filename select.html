@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>select</title>
+	<link rel="stylesheet" type="text/css" href="libs/select/css/select2.min.css">
+
+	  <link rel="stylesheet" href="./libs/css/bootstrap.min.css">
+
+	  <link rel="stylesheet" href="./libs/css/common.css">
+	  <link rel="stylesheet" href="./libs/css/boot_revise.css">
+	<script src="./libs/js/jquery.min.js"></script>
+	<script src="libs/select/js/select2.full.min.js"></script>
+	<script src="libs/select/js/i18n/zh-CN.js"></script>
+
+</head>
+<body style="margin:30px;">
+	<select class="select2_demo" style="width:1000px;" multiple="multiple">
+	  <option value="AL">Alabama</option>
+	  <option value="CA">CACACA</option>
+	  <option value="Wy">Wyoming</option>
+	</select>
+	<input type="button" class="set_default" value="设置默认">
+	<input type="button" class="clear_select" value="清除">
+    <script type="text/javascript">
+    	var data = [{ id: 0, text: 'enhancement' },
+    		{ id: 1, text: 'bug' },
+    		{ id: 2, text: 'duplicate' },
+    		{ id: 3, text: 'invalid' },
+    		{ id: 4, text: 'wontfix' }];
+    </script>
+	<script type="text/javascript">
+		var $exampleMulti;
+		$(document).ready(function() {
+		  $exampleMulti = $(".select2_demo").select2({
+		  	data:data,
+		  	placeholder:"请选择",
+		  	allowClear:true
+		  });
+		});
+
+
+
+		 // = $(".js-example-programmatic-multi").select2();
+		$(".set_default").on("click", function () { $exampleMulti.val(["CA", "AL"]).trigger("change"); });
+		$(".clear_select").on("click", function () { $exampleMulti.val(null).trigger("change"); });
+
+	</script>
+</body>
+</html>
