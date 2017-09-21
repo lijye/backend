@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+/**
+  Reset -- 重置样式表
+  Description : CSS样式表的初始化，全局样式设置。部分样式属性请根据具体页面重置其属性。
+  导入方式 ：<link rel="stylesheet" type="text/css" href="css/reset.css" />
+*/
+
+/*把浏览器提供的默认样式覆盖掉！这就是CSS reset。
+不同的浏览器对于html标签的解释各不相同，重置css可以使得html标签在各个浏览器下产生相同的表现效果。*/
+
+/* reset */
+/* * { */
+    /* margin: 0; */
+    /* padding: 0; */
+    /* border和padding计算入width和height之内，即怪异模式 */
+    /* box-sizing: border-box; */
+/* } */
+
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*选择器*无法覆盖到伪元素，所以需要给:before和:after分别设置。而通过继承的方式应用到所有元素，需要时可以方便地设置某个元素及其后代元素的 box-sizing回content-box（默认值，标准盒模型）*/
+
+/**, *:before, *:after {
+    box-sizing: inherit;
+}*/
+
+a {
+    /*去掉超链接的下划线*/
+    text-decoration: none;
+    /*字体黑色*/
+    color: #000;
+    /*图片设置超链接后，如果要加鼠标滑过显示边框效果，那么默认情况下边框只显示一半*/
+    display: block;
+}
+
+ul, ol, li, dl, dt, dd {
+    list-style: none;
+}
+
+img {
+    /*图片加超链接后，在IE浏览器下有边框*/
+    border: none;
+    /*图片下方有间隙*/
+    display: block;
+    /*图片在当前行内的垂直位置*/
+    vertical-align: middle;
+}
+
+/*去掉元素的边框*/
+/**:focus {
+    outline: none;
+}
+
+input {
+    border: none;
+    outline: none;
+}*/
+
+/*超出范围用省略号代替*/
+.ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    letter-spacing: 1px;
+}
+
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+
+/*给父元素设置一个类名clearFloat，然后设置该类的样式*/
+.clearFloat:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+body {
+    /*font: normal normal 12px "微软雅黑";*/
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    font-family: Arial, "苹方", "Microsoft YaHei", "宋体", Tahoma, Helvetica, "\5b8b\4f53", sans-serif;
+
+    /*margin: 0 auto;*/
+    color: #333;
+}

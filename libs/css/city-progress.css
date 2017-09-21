@@ -1,0 +1,226 @@
+@charset "utf-8";
+
+body {
+    font-size: 16px;
+}
+/*大容器*/
+#cityProgress {
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/*======================= 这是行 =======================*/
+
+.city {
+    display: inline-block;
+    /*解决缝隙问题*/
+    margin-right: -5px;
+}
+.city span{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    /*line-height: 50px;*/
+
+    /*文字垂直居中*/
+    padding: 10px 0;
+    text-align: center;
+    background-color: #fff;
+    color: #ccc;
+
+    border-radius: 50%;
+    border: 5px solid #ccc;
+    vertical-align: middle;
+}
+.active span{
+    color: #fff;
+    background-color: #00b8f5;
+
+}
+
+/*左右的连线*/
+.city::before {
+    content: "";
+    display: inline-block;
+    width: 50px;
+    height: 4px;
+    vertical-align: middle;
+    background: #ccc;
+}
+.city::after {
+    content: "";
+    display: inline-block;
+    width: 50px;
+    height: 4px;
+    vertical-align: middle;
+    background: #ccc;
+}
+
+/*激活的城市状态*/
+.active::before {
+    content: "";
+    display: inline-block;
+    width: 50px;
+    height: 4px;
+    vertical-align: middle;
+    background: #00b8f5;
+}
+.active::after {
+    content: "";
+    display: inline-block;
+    width: 50px;
+    height: 4px;
+    vertical-align: middle;
+    background: #00b8f5;
+}
+
+/*第一个左侧*/
+.city:first-of-type::before {
+    display: none;
+}
+/*最后一个右侧*/
+.city:last-of-type::after {
+    display: none;
+}
+/*最后一个激活的右侧*/
+/*.active:last-of-type::after {
+    content: "";
+    display: inline-block;
+    width: 50px;
+    height: 4px;
+    vertical-align: middle;
+    background: #ccc;
+}*/
+
+/*状态信息*/
+.msg-box {
+    padding-top: 20px;
+}
+.msg-box div {
+    display: inline-block;
+    width: auto;
+    border: 1px solid #ccc;
+    padding: 2px;
+
+    /*margin-right: -5px;*/
+    margin: 0 5px;
+}
+.msg-box div p {
+    text-align: left;
+    /*font-size: 12px;*/
+}
+
+
+/*=========================这是列=========================*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.clearfix {
+    content: "";
+    display: block;
+    clear: both;
+}
+.title-box{
+    float: left;
+    width: auto;
+    margin-left: 20px;
+}
+.city-box {
+    /*float: left;*/
+    width: auto;
+    margin: 0 20px 0 14px;
+}
+.col-title {
+    display: block;
+    height: 100px;
+    line-height: 100px;
+    width: auto;
+    color: #007203;
+    text-align: right;
+}
+.col-title:first-of-type {
+    height: 60px;
+    line-height: 20px;
+}
+.col-span {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+.col-text {
+    width: 20px;
+    height: 20px;
+    /*line-height: 50px;*/
+
+    border-radius: 50%;
+    border: 2px solid #787878;
+    background: #c4c4c4;
+    color: #ccc;
+
+    /*padding: 8px 0;*/
+}
+
+/*连线默认样式*/
+.col-before {
+    display: block;
+    width: 2px;
+    height: 40px;
+    background: #787878;
+}
+.col-after {
+    display: block;
+    width: 2px;
+    height: 40px;
+    background: #787878;
+}
+
+/*去掉头和尾*/
+.col-city:first-of-type .col-before{
+    display: none;
+}
+.col-city:last-of-type .col-after{
+    display: none;
+}
+
+/*激活状态*/
+/*.col-active {
+    background: blue;
+    color: #fff;
+}*/
+
+.msg-box {
+    /*float: left;*/
+    padding: 0;
+}
+.col-time {
+    height: 20px;
+    line-height: 20px;
+    color: #000;
+    font-weight: 600;
+    padding-top: 2px;
+}
+.col-msg {
+    height: 80px;
+    line-height: 80px;
+    max-width: 500px;
+    color: #999;
+    /*text-indent: 2em;*/
+
+    /*省略号*/
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    letter-spacing: 1px;
+}
+.msg-box .msg-item {
+    display: block;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
