@@ -4,7 +4,7 @@ body {
     font-size: 16px;
 }
 /*大容器*/
-#cityProgress {
+#progress {
     width: 100%;
     padding: 20px 0;
     text-align: center;
@@ -204,18 +204,32 @@ body {
     font-weight: 600;
     padding-top: 2px;
 }
-.col-msg {
+.msg-box .col-msg-box {
+    display: block;
+    border: none;
+    margin: 0;
+    padding: 0;
+
     height: 80px;
-    line-height: 80px;
+    display: table;
+
+    overflow: hidden;
+}
+.col-msg {
+    /*height: 80px;
+    line-height: 80px;*/
     max-width: 500px;
     color: #999;
     /*text-indent: 2em;*/
 
     /*省略号*/
-    overflow: hidden;
+   /* overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    letter-spacing: 1px;
+    letter-spacing: 1px;*/
+
+    display: table-cell;
+    vertical-align: middle;
 }
 .msg-box .msg-item {
     display: block;

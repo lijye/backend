@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <title>城市进度</title>
     <link rel="stylesheet" href="./libs/css/reset.css">
-    <link rel="stylesheet" href="./libs/css/city-progress.css">
+    <link rel="stylesheet" href="./libs/css/progress.css">
 </head>
 <body>
 
-    <div id="cityProgress">
+    <div id="progress">
 
         <!-- <div class="city-box">
             <div class="city active"><span>广州</span></div>
@@ -40,7 +40,7 @@
 
 
     <script type="text/javascript" src="./libs/js/jquery-1.8.3.min.js"></script>
-    <script type="text/javascript" src="./libs/js/city-progress.js"></script>
+    <script type="text/javascript" src="./libs/js/progress.js"></script>
     <script type="text/javascript">
         // $(document).ready(function (argument) {
         //     // var text = params[i].name;
@@ -54,14 +54,14 @@
 
         // console.log(CityProgress);
 
-        CityProgress({
-            id:"#cityProgress",
+        Progress({
+            id:"#progress",
             data: [
                 {name: "", active: true, time: "2017-09-20 14:30", status: "状态：处理完毕"},
                 {name: "开始", active: true, time: "2017-09-20 14:30", status: "状态：处理完毕，啊哈哈"},
                 {name: "领取/指派", active: false, time: "2017-09-20 14:30", status: "状态：处理完毕"},
                 {name: "执行", active: false, time: "2017-09-20 14:30", status: "状态：处理完毕，文字眼哦长短不齐"},
-                {name: "完成", active: false, time: "2017-09-20 14:30", status: "状态：处理完毕，啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊,啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊"}
+                {name: "完成", active: false, time: "2017-09-20 14:30", status: "状态：处理完毕，啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊，换行居中，换行居中，换行居中，换行居中换行居中，换行居中换行居中，换行居中换行居中，换行居中"}
             ],
             type: "column"
         });

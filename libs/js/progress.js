@@ -1,8 +1,8 @@
-console.log("cityProgress.js");
+console.log("progress.js");
 // 需引入jQuery
 
-var CityProgress = function (obj) {
-    if (!(this instanceof CityProgress)) return new CityProgress(obj);
+var Progress = function (obj) {
+    if (!(this instanceof Progress)) return new Progress(obj);
 
     // id是一个选择器，data是一个数组
     var id = obj.id;
@@ -105,13 +105,15 @@ var CityProgress = function (obj) {
                 var status = data[i].status;
                 // 创建节点
                 var p1 = $("<p class='col-time'></p>");
+                var box = $("<div class='col-msg-box'</div>");
                 var p2 = $("<p class='col-msg'></p>");
                 p1.html(time);
                 p2.html(status);
                 var msgItem = $("<div class='msg-item'></div>")
                 // 插入DOM
                 p1.appendTo(msgItem);
-                p2.appendTo(msgItem);
+                box.appendTo(msgItem);
+                p2.appendTo(box);
                 msgItem.appendTo(msgBox);
 
             } else if (!data[i].active) {
@@ -139,13 +141,15 @@ var CityProgress = function (obj) {
                 var status = data[i].status;
                 // 创建节点
                 var p1 = $("<p class='col-time'></p>");
+                var box = $("<div class='col-msg-box'</div>");
                 var p2 = $("<p class='col-msg'></p>");
                 p1.html(time);
                 p2.html(status);
                 var msgItem = $("<div class='msg-item'></div>")
                 // 插入DOM
                 p1.appendTo(msgItem);
-                p2.appendTo(msgItem);
+                box.appendTo(msgItem);
+                p2.appendTo(box);
                 msgItem.appendTo(msgBox);
             }
         }
