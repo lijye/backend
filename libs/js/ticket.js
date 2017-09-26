@@ -2,6 +2,7 @@
 
 // 生成ticket条目函数
 function ticketFn(el, arr) {
+	// ticket条目容器
     var ticketContent = $("<div id='ticket-content'></div>");
     ticketContent.appendTo($(el));
 
@@ -75,7 +76,7 @@ function ticketFn(el, arr) {
             desc.appendTo(ticketLeft);
         }
 
-        // 右侧容器
+        // 右侧容器 ==== 无需判断
         var ticketRight = $("<div class='ticket-right'></div>");
         ticketRight.appendTo(discount);
 
