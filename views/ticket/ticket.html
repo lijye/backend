@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>Ticket - 3 Types</title>
+    <link rel="stylesheet" href="./css/ticket.css">
+</head>
+<body>
+    <div id="ticket">
+
+    </div>
+
+    <script type="text/javascript" src="./js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="./js/ticket.js"></script>
+    <script type="text/javascript">
+        /**
+         * 使用说明
+         * 此文件可看作一个demo
+         *
+         * 函数：ticketFn(el, arr);
+         * el：是表示选择器的字符串
+         * arr：是一个数组，其元素为js对象
+         */
+        ticketFn("#ticket", [
+            {
+                type: 1,
+                text: "9.0",  // 注意了，若有小数点，用String类型，和第52行对比页面结果
+                desc: "满50元可用",
+
+                content: "Gofun出行9折券",
+                date: "有效期至2017年10月31日",
+            },
+            {
+                type: 2,
+                text: 30,
+                // desc: "满50元可用",
+
+                content: "Gofun出行30元抵扣券",
+                date: "有效期至2017年10月31日",
+            },
+            {
+                type: 3,
+                name: "套餐券",
+                text: "日租券",
+                desc: "168元",
+
+                content: "168元日租券",
+                date: "有效期至2017年10月31日",
+            },
+            {
+                type: 1,
+                text: 9.0,
+                desc: "满50元可用",
+
+                content: "Gofun出行9折券",
+                date: "有效期至2017年10月31日",
+            }
+        ]);
+    </script>
+</body>
+</html>
