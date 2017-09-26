@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./css/ticket.css">
 </head>
 <body>
+    <!-- 这个容器使用时自己写 -->
     <div id="ticket">
 
     </div>
@@ -19,7 +20,7 @@
          *
          * 函数：ticketFn(el, arr);
          * el：是表示选择器的字符串
-         * arr：是一个数组，其元素为js对象
+         * arr：是一个数组，其元素为js对象，几条数据，就按类型展示几个，一个也可以
          */
         ticketFn("#ticket", [
             {
@@ -29,6 +30,7 @@
 
                 content: "Gofun出行9折券",
                 date: "有效期至2017年10月31日",
+                scope2: "只可抵扣时间费用、里程费用，两行内容，换行居中，超出省略号显示，两行内容，换行居中，超出省略号显示"
             },
             {
                 type: 2,
@@ -37,6 +39,7 @@
 
                 content: "Gofun出行30元抵扣券",
                 date: "有效期至2017年10月31日",
+                scope2: "一行的时候，要靠底部"
             },
             {
                 type: 3,

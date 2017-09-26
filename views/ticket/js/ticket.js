@@ -12,6 +12,8 @@ function ticketFn(el, arr) {
         var descVal = arr[i].desc;
         var contentVal = arr[i].content;
         var dateVal = arr[i].date;
+        var scope2Val = arr[i].scope2;
+        console.log(scope2Val);
 
         // 判断类型
         if (arr[i].type == 1) {
@@ -82,13 +84,11 @@ function ticketFn(el, arr) {
         // 创建右侧节点
         var content = $("<p class='type-content'>" + contentVal + "</p>");
         var date = $("<p class='type-date'>" + dateVal + "</p>");
-        var scope1 = $("<p class='type-scope1'>全国通用</p>");
-        var scope2 = $("<p class='type-scope2'>只可抵扣时间费用、里程费用</p>");
+        var scopeBox = $("<div class='scope-box'><p class='type-scope1'>全国通用</p><p class='type-scope2'>" + scope2Val + "</p></div>")
 
         // 插入右侧容器
         content.appendTo(ticketRight);
         date.appendTo(ticketRight);
-        scope1.appendTo(ticketRight);
-        scope2.appendTo(ticketRight);
+        scopeBox.appendTo(ticketRight);
     }
 }

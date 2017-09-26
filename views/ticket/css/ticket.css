@@ -27,7 +27,7 @@
 #ticket-content>div:last-of-type {
     margin-bottom: 0;
 }
-/*左侧*/
+/*左侧-容器*/
 .ticket-left {
     width: 122px;
 }
@@ -72,9 +72,12 @@
     margin-top: 2px;
     text-align: center;
 }
-/*右侧*/
+/*右侧-容器*/
 .ticket-right {
-    padding: 12px 0 15px 18px;
+    position: relative;
+    width: 233px;
+    padding: 12px 20px 15px 18px;
+    /*margin-right: 25px;*/
 
     font-family: PingFangSC-Regular;
     font-size: 10px;
@@ -88,8 +91,21 @@
 }
 .type-date {
     color: #b4b4b4;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+}
+/*此容器定位在底部*/
+.scope-box {
+    position: absolute;
+    width: 195px;
+    bottom: 15px;
 }
 .type-scope1 {
     margin-bottom: 2px;
+}
+.type-scope2 {
+    overflow:hidden;
+    text-overflow: ellipsis;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
 }
